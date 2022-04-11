@@ -29,6 +29,10 @@ services:
         traefik.enable: 'true'
         traefik.http.routers.CHANGETHIS-http.rule: Host(`${DOMAIN}`)
       replicas: 1
+      resources:
+        limits:
+          cpus: '0.6'
+          memory: 600M
 networks:
   traefik-public:
     external: true
